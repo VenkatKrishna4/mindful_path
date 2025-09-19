@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Path</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="app-header">
+        <h1>Mindful Path</h1>
+        <nav class="main-nav">
+            <button class="nav-button" data-section="dashboard">Home</button>
+            <button class="nav-button" data-section="assessment-section">Assessment</button>
+            <button class="nav-button" data-section="journal-section">Journal</button>
+            <button class="nav-button" data-section="breathing-section">Breathing</button>
+            <button class="nav-button" data-section="chatbot-section">Chatbot</button>
+        </nav>
+    </header>
+
+    <main class="app-container">
+
+        <section id="dashboard" class="app-section active">
+            <h2>Welcome to Mindful Path</h2>
+            <p>Your journey to a happier life starts here. Use our tools to understand yourself better and find peace of mind.</p>
+            <button class="cta-button" data-section="assessment-section">Start Your Self-Assessment</button>
+        </section>
+
+        <section id="assessment-section" class="app-section">
+            <div id="assessment-container">
+                </div>
+            <div class="assessment-navigation">
+                <button id="prev-btn" style="display: none;">Previous</button>
+                <button id="next-btn">Next</button>
+                <button id="submit-btn" style="display: none;">Submit</button>
+            </div>
+        </section>
+
+        <section id="report-section" class="app-section">
+            <h2>Your Personalized Report</h2>
+            <div id="report-container">
+                </div>
+        </section>
+
+        <section id="journal-section" class="app-section">
+            <h2>Your Journal</h2>
+            <div class="journal-entry">
+                <label for="journal-text">What's on your mind today?</label>
+                <textarea id="journal-text" placeholder="Write your thoughts here..."></textarea>
+            </div>
+            <button id="save-journal-btn">Save Entry</button>
+            <div id="journal-list">
+                </div>
+        </section>
+
+        <section id="breathing-section" class="app-section">
+            <h2>Guided Breathing</h2>
+            <div class="breathing-container">
+                <div id="breathing-circle" class="breathing-circle"></div>
+                <p id="breathing-prompt">Tap to start</p>
+            </div>
+        </section>
+        
+        <section id="chatbot-section" class="app-section">
+            <h2>Mental Health Chatbot</h2>
+            <div id="chat-box" class="chat-box">
+                <div class="chat-message bot-message">
+                    <p>Hi there! I'm here to listen. How are you feeling today?</p>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Type your message...">
+                <button id="send-button">Send</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="report-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
