@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mindful Path</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -23,9 +23,83 @@
     <main class="app-container">
 
         <section id="dashboard" class="app-section active">
-            <h2>Welcome to Mindful Path</h2>
-            <p>Your journey to a happier life starts here. Use our tools to understand yourself better and find peace of mind.</p>
-            <button class="cta-button" data-section="assessment-section">Start Your Self-Assessment</button>
+            <h2>🌟 Welcome to Mindful Path</h2>
+            <p class="section-subtitle">Your journey to mental wellness and self-discovery starts here</p>
+            
+            <!-- Quick Stats -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <h3 id="assessment-count">0</h3>
+                        <p>Assessments Completed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-content">
+                        <h3 id="journal-count">0</h3>
+                        <p>Journal Entries</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">😊</div>
+                    <div class="stat-content">
+                        <h3 id="mood-streak">0</h3>
+                        <p>Day Mood Streak</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🧘</div>
+                    <div class="stat-content">
+                        <h3 id="breathing-sessions">0</h3>
+                        <p>Breathing Sessions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <div class="action-grid">
+                    <button class="action-btn" data-section="assessment-section">
+                        <div class="action-icon">🧠</div>
+                        <div class="action-text">
+                            <h4>Personality Assessment</h4>
+                            <p>Discover your personality type</p>
+                        </div>
+                    </button>
+                    <button class="action-btn" data-section="journal-section">
+                        <div class="action-icon">📝</div>
+                        <div class="action-text">
+                            <h4>Mood & Journal</h4>
+                            <p>Track your mood and thoughts</p>
+                        </div>
+                    </button>
+                    <button class="action-btn" data-section="breathing-section">
+                        <div class="action-icon">🌬️</div>
+                        <div class="action-text">
+                            <h4>Guided Breathing</h4>
+                            <p>Relax and find your center</p>
+                        </div>
+                    </button>
+                    <button class="action-btn" data-section="chatbot-section">
+                        <div class="action-icon">💬</div>
+                        <div class="action-text">
+                            <h4>Mental Health Chat</h4>
+                            <p>Get support and guidance</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <div id="recent-activity-list">
+                    <p class="no-activity">No recent activity. Start your wellness journey!</p>
+                </div>
+            </div>
         </section>
 
         <section id="assessment-section" class="app-section">
@@ -45,34 +119,176 @@
         </section>
 
         <section id="journal-section" class="app-section">
-            <h2>Your Journal</h2>
-            <div class="journal-entry">
-                <label for="journal-text">What's on your mind today?</label>
-                <textarea id="journal-text" placeholder="Write your thoughts here..."></textarea>
-            </div>
-            <button id="save-journal-btn">Save Entry</button>
-            <div id="journal-list">
+            <h2>📝 Mood & Journal</h2>
+            <p class="section-subtitle">Track your daily mood and express your thoughts</p>
+            
+            <!-- Mood Tracking -->
+            <div class="mood-tracking">
+                <h3>How are you feeling today?</h3>
+                <div class="mood-selector">
+                    <div class="mood-option" data-mood="very-sad">
+                        <div class="mood-emoji">😢</div>
+                        <span>Very Sad</span>
+                    </div>
+                    <div class="mood-option" data-mood="sad">
+                        <div class="mood-emoji">😔</div>
+                        <span>Sad</span>
+                    </div>
+                    <div class="mood-option" data-mood="neutral">
+                        <div class="mood-emoji">😐</div>
+                        <span>Neutral</span>
+                    </div>
+                    <div class="mood-option" data-mood="happy">
+                        <div class="mood-emoji">😊</div>
+                        <span>Happy</span>
+                    </div>
+                    <div class="mood-option" data-mood="very-happy">
+                        <div class="mood-emoji">😄</div>
+                        <span>Very Happy</span>
+                    </div>
                 </div>
+                <div class="mood-details">
+                    <input type="text" id="mood-note" placeholder="Add a note about your mood (optional)">
+                </div>
+            </div>
+
+            <!-- Journal Entry -->
+            <div class="journal-entry">
+                <h3>Journal Entry</h3>
+                <label for="journal-text">What's on your mind today?</label>
+                <textarea id="journal-text" placeholder="Write your thoughts, feelings, or experiences here..."></textarea>
+                <div class="journal-tags">
+                    <span class="tag-label">Tags:</span>
+                    <button class="tag-btn" data-tag="gratitude">Gratitude</button>
+                    <button class="tag-btn" data-tag="anxiety">Anxiety</button>
+                    <button class="tag-btn" data-tag="work">Work</button>
+                    <button class="tag-btn" data-tag="relationships">Relationships</button>
+                    <button class="tag-btn" data-tag="health">Health</button>
+                    <button class="tag-btn" data-tag="goals">Goals</button>
+                </div>
+            </div>
+            
+            <button id="save-journal-btn" class="save-btn">
+                <span>💾</span> Save Entry
+            </button>
+            
+            <!-- Mood History -->
+            <div class="mood-history">
+                <h3>Mood History</h3>
+                <div id="mood-chart" class="mood-chart"></div>
+            </div>
+            
+            <!-- Journal Entries List -->
+            <div class="journal-entries">
+                <h3>Recent Entries</h3>
+                <div id="journal-list"></div>
+            </div>
         </section>
 
         <section id="breathing-section" class="app-section">
-            <h2>Guided Breathing</h2>
+            <h2>🌬️ Guided Breathing</h2>
+            <p class="section-subtitle">Find your calm with guided breathing exercises</p>
+            
+            <!-- Breathing Exercise Selection -->
+            <div class="breathing-exercises">
+                <h3>Choose Your Exercise</h3>
+                <div class="exercise-selector">
+                    <button class="exercise-btn active" data-exercise="4-7-8">
+                        <div class="exercise-icon">🕐</div>
+                        <h4>4-7-8 Breathing</h4>
+                        <p>Calming technique for stress relief</p>
+                    </button>
+                    <button class="exercise-btn" data-exercise="box">
+                        <div class="exercise-icon">📦</div>
+                        <h4>Box Breathing</h4>
+                        <p>Equal inhale, hold, exhale, hold</p>
+                    </button>
+                    <button class="exercise-btn" data-exercise="deep">
+                        <div class="exercise-icon">🌊</div>
+                        <h4>Deep Breathing</h4>
+                        <p>Slow, deep breaths for relaxation</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Breathing Visual -->
             <div class="breathing-container">
-                <div id="breathing-circle" class="breathing-circle"></div>
-                <p id="breathing-prompt">Tap to start</p>
+                <div class="breathing-visual">
+                    <div id="breathing-circle" class="breathing-circle"></div>
+                    <div class="breathing-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+                </div>
+                <div class="breathing-controls">
+                    <p id="breathing-prompt">Tap to start your breathing exercise</p>
+                    <div class="breathing-stats">
+                        <div class="stat">
+                            <span class="stat-label">Cycle</span>
+                            <span id="cycle-count">0</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Time</span>
+                            <span id="breathing-timer">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breathing Tips -->
+            <div class="breathing-tips">
+                <h3>💡 Breathing Tips</h3>
+                <ul>
+                    <li>Find a comfortable position and relax your shoulders</li>
+                    <li>Breathe through your nose if possible</li>
+                    <li>Focus on the rhythm and let go of other thoughts</li>
+                    <li>Practice regularly for best results</li>
+                </ul>
             </div>
         </section>
         
         <section id="chatbot-section" class="app-section">
-            <h2>Mental Health Chatbot</h2>
-            <div id="chat-box" class="chat-box">
-                <div class="chat-message bot-message">
-                    <p>Hi there! I'm here to listen. How are you feeling today?</p>
+            <h2>💬 Mental Health Support</h2>
+            <p class="section-subtitle">Get compassionate support and guidance from our AI assistant</p>
+            
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <div class="chatbot-avatar">🤖</div>
+                    <div class="chatbot-info">
+                        <h3>Mindful Assistant</h3>
+                        <p>Always here to listen and support you</p>
+                    </div>
+                    <div class="chat-status">
+                        <span class="status-dot"></span>
+                        <span>Online</span>
+                    </div>
                 </div>
-            </div>
-            <div class="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Type your message...">
-                <button id="send-button">Send</button>
+                
+                <div id="chat-box" class="chat-box">
+                    <div class="chat-message bot-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>Hi there! I'm here to listen and provide support. How are you feeling today? Remember, I'm not a replacement for professional help, but I'm here to offer a listening ear and gentle guidance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Share what's on your mind...">
+                    <button id="send-button">
+                        <span>Send</span>
+                        <span>📤</span>
+                    </button>
+                </div>
+                
+                <div class="chat-suggestions">
+                    <p>Quick suggestions:</p>
+                    <button class="suggestion-btn" data-suggestion="I'm feeling anxious today">I'm feeling anxious today</button>
+                    <button class="suggestion-btn" data-suggestion="I need help with stress">I need help with stress</button>
+                    <button class="suggestion-btn" data-suggestion="I'm having trouble sleeping">I'm having trouble sleeping</button>
+                    <button class="suggestion-btn" data-suggestion="I want to talk about my mood">I want to talk about my mood</button>
+                </div>
             </div>
         </section>
 
